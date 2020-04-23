@@ -60,6 +60,7 @@ const store = {
   score: 0
 };
 
+
 /**
  * 
  * Technical requirements:
