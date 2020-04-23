@@ -15,7 +15,7 @@ const store = {
       correctAnswer: 'Room for Squares'
     },
     {
-      question: 'Who is the lead vocalist for Dave Matthews Band?',
+      question: 'Who is the lead vocalist for Dave Matthews Band?', 
       answers: [
         'Paul McCartney',
         'Billy Joel',
