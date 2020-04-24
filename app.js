@@ -58,7 +58,8 @@ const store = {
   ],
   quizStarted: false,
   questionNumber: 0,
-  score: 0
+  score: 0,
+  questionAnsweredCorrectly: null
 };
 
 
@@ -159,24 +160,35 @@ function finishPage () {
 // These functions return HTML templates
 
 /********** RENDER FUNCTION(S) **********/
-function renderWelcomePage() {
-  return welcomePage()
-}
+// function renderWelcomePage() {
+//   return welcomePage()
+// }
 
-function renderQuestionPage() {
-  return questionPage()
-}
+// function renderQuestionPage() {
+//   return questionPage()
+// }
 
-function renderCorrectAnswerPage() {
-  return correctAnswerPage() 
-}
+// function renderCorrectAnswerPage() {
+//   return correctAnswerPage() 
+// }
 
-function renderWrongAnswerPage() {
-  return wrongAnswerPage()
-}
+// function renderWrongAnswerPage() {
+//   return wrongAnswerPage()
+// }
 
-function renderFinishPage() {
-  return finishPage()
+// function renderFinishPage() {
+//   return finishPage()
+//}
+
+function render() {
+  //don't want any .html .append dom manip methods outside of render()
+  if(store.quizStarted === false) {
+    $('main').html(welcomePage())
+  }
+  else{
+    $('main').html(questionPage())
+  }
+  
 }
 // This function conditionally replaces the contents of the <main> tag based on the state of the store
 
@@ -186,10 +198,9 @@ function renderFinishPage() {
 
 function handleStart() {
   // we want this function to listen for a click on -play-now button which is a child class of -welcome-screen. 
-  $('.welcome-screen').on('click', '.play-now', function() {
+  $('main').on('click', '.play-now', function() {
     store.quizStarted = true;
-    
-    $('main').html(renderQuestionPage())
+    render()
   })
 }
 
@@ -198,21 +209,24 @@ function handleNextQuestionPage() {
   //When a user submits an answer, if the answer is correct, take them to the correctAnswerPage, else, take them to the wrongAnswerPage
   //if answer is correct, call(renderCorrectAnswerPage()), +1 score & +1 question count(number)  
   //if answer is wrong, call(renderWrongAnswerPage()), +1 question count(number)
-  ('main').on('submit', '.answer-question', event => {
+  $('main').on('submit', '.answer-question', event => {
     event.preventDefault();
     let answer = $('input[name="album"]:checked').val()
+    console.log(answer)
     let correct = store.questions[store.questionNumber].correctAnswer;
     if(answer == correct) {
       store.score += 1;
       store.questionNumber += 1;
-      $('main').html(renderCorrectAnswerPage())
-
+      store.questionAnsweredCorrectly = true;
     }
     else {
       store.questionNumber += 1;
-      $('main').html(renderWrongAnswerPage())
+      store.questionAnsweredCorrectly = false;
     }
+    render()
   }) 
 
 }
-
+handleStart()
+handleNextQuestionPage()
+render()
