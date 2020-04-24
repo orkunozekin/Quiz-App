@@ -53,6 +53,7 @@ const store = {
         'Spice Girls'
       ],
       correctAnswer: 'Destiny’s Child'
+    
     }
   ],
   quizStarted: false,
@@ -60,7 +61,43 @@ const store = {
   score: 0
 };
 
+function welcomePage() {
+  return`
+  <section class ="container">
+  <h1>Music Knowledge Test</h1>
+  <p>Prove your music knowledge skills!</p>
+  <button>
+    <span>Play now!</span>
+  </button>
+</section>`
+}
 
+
+function questionPage() {
+  let value = store.questions[store.questionNumber].answers
+  return `
+  <section class="container">
+<p>Question ${store.questionNumber + 1} out of ${store.questions.length}</p>
+<form class="answer-question" action="#">
+    <p>${store.questions[store.questionNumber].question}</p>
+    <input type="radio" id="a1" name="album" value="${value[0]}">
+    <label for="a1">${value[0]}</label><br>
+    <input type="radio" id="a2" name="album" value="${value[1]}">
+    <label for="a2">${value[1]}</label><br>
+    <input type="radio" id="a3" name="album" value="${value[2]}">
+    <label for="a3">${value[2]}</label><br>
+    <input type="radio" id="a4" name="album" value="${value[3]}">
+    <label for="a4">${value[3]}</label>
+    <button class="submit-question">
+        <span>Submit</span>
+    </button>
+</form>
+</section> `
+}
+
+function 
+
+console.log(store.questions[store.questionNumber].question)
 
 
 /**
@@ -80,13 +117,56 @@ const store = {
 
 /********** TEMPLATE GENERATION FUNCTIONS **********/
 
+function welcomePage() {
+  return`
+  <section class ="container">
+  <h1>Music Knowledge Test</h1>
+  <p>Prove your music knowledge skills!</p>
+  <button>
+    <span>Play now!</span>
+  </button>
+</section>`
+}
+
+
+function questionPage() {
+  let value = store.questions[store.questionNumber].answers
+  return `
+  <section class="container">
+<p>Question ${store.questionNumber + 1} out of ${store.questions.length}</p>
+<form class="answer-question" action="#">
+    <p>${store.questions[store.questionNumber].question}</p>
+    <input type="radio" id="a1" name="album" value="${value[0]}">
+    <label for="a1">${value[0]}</label><br>
+    <input type="radio" id="a2" name="album" value="${value[1]}">
+    <label for="a2">${value[1]}</label><br>
+    <input type="radio" id="a3" name="album" value="${value[2]}">
+    <label for="a3">${value[2]}</label><br>
+    <input type="radio" id="a4" name="album" value="${value[3]}">
+    <label for="a4">${value[3]}</label>
+    <button class="submit-question">
+        <span>Submit</span>
+    </button>
+</form>
+</section> `
+}
+
+
 
 
 
 // These functions return HTML templates
 
 /********** RENDER FUNCTION(S) **********/
+function renderWelcomePage() {
+  return welcomePage()
+}
 
+function renderQuestionPage() {
+  return questionPage()
+}
+
+function renderCorrectPage
 // This function conditionally replaces the contents of the <main> tag based on the state of the store
 
 /********** EVENT HANDLER FUNCTIONS **********/
