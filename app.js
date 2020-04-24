@@ -184,11 +184,28 @@ function render() {
   //don't want any .html .append dom manip methods outside of render()
   if(store.quizStarted === false) {
     $('main').html(welcomePage())
+    return
   }
-  else{
-    $('main').html(questionPage())
+
+  if(store.questionAnsweredCorrectly === null) {
+      $('main').html(questionPage())
+      return
   }
-  
+
+if(store.questionAnsweredCorrectly === true) {
+  $('main').html(correctAnswerPage())
+}
+
+else {
+    $('main').html(wrongAnswerPage())
+}
+if(store.questionNumber < store.question.length) {
+  $('main').html(questionPage())
+}
+else {
+  $('main').html(finishPage())
+}
+
 }
 // This function conditionally replaces the contents of the <main> tag based on the state of the store
 
@@ -206,20 +223,20 @@ function handleStart() {
 
 
 function handleNextQuestionPage() {
-  //When a user submits an answer, if the answer is correct, take them to the correctAnswerPage, else, take them to the wrongAnswerPage
-  //if answer is correct, call(renderCorrectAnswerPage()), +1 score & +1 question count(number)  
-  //if answer is wrong, call(renderWrongAnswerPage()), +1 question count(number)
+  // When a user submits an answer, if the answer is correct, take them to the correctAnswerPage, else, take them to the wrongAnswerPage
+  // if answer is correct, call(renderCorrectAnswerPage()), +1 score & +1 question count(number)  
+  // if answer is wrong, call(renderWrongAnswerPage()), +1 question count(number)
   $('main').on('submit', '.answer-question', event => {
     event.preventDefault();
     let answer = $('input[name="album"]:checked').val()
     console.log(answer)
-    let correct = store.questions[store.questionNumber].correctAnswer;
-    if(answer == correct) {
+    let correct = store.questions[store.questionNumber].correctAnswer; 
+    if(answer === correct) {
       store.score += 1;
       store.questionNumber += 1;
       store.questionAnsweredCorrectly = true;
     }
-    else {
+    else { 
       store.questionNumber += 1;
       store.questionAnsweredCorrectly = false;
     }
@@ -227,6 +244,35 @@ function handleNextQuestionPage() {
   }) 
 
 }
+
+function handleNextPage() {
+    //when we click next, we want to render the page for next question.
+    $('main').on('click', '.next', event => {
+        console.log('next-button clicked')
+        store.questionAnsweredCorrectly = null;
+        if(store.questionNumber = store.question.length) {
+          render()
+        }
+        
+    })
+}
+
+function handleRestart() {
+  $('main').on('click', '.reset', event => {
+    
+  })
+}
+
+
+render()
 handleStart()
 handleNextQuestionPage()
-render()
+handleNextPage()
+
+
+
+
+     
+      
+    
+      
