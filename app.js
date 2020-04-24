@@ -27,7 +27,7 @@ const store = {
     {
       question: 'Who wrote “I Will Always Love you?',
       answers: [
-        'Whitney Houston'
+        'Whitney Houston',
         'Dolly Parton',
         'Aretha Franklin',
         'Carole King'
@@ -84,7 +84,7 @@ function welcomePage() {
   <section class ="container welcome-screen">
   <h1>Music Knowledge Test</h1>
   <p>Prove your music knowledge skills!</p>
-  <button>
+  <button class="play-now">
     <span>Play now!</span>
   </button>
 </section>`
@@ -132,7 +132,7 @@ function wrongAnswerPage () {
   <section class="container wrong-page">
     <h2>Oops! Wrong Answer :(</h2>
     <div class="paragraph">
-      <p>The correct answer is "${store.questions[store.questionNumber].correctAnswer}"</p>
+      <p>The correct answer is "${store.questions[store.questionNumber-1].correctAnswer}"</p>
       <p>You have ${store.score} correct answers out of 5</p>
       <p>Question ${store.questionNumber} out of 5/p>
     </div>
@@ -183,3 +183,36 @@ function renderFinishPage() {
 /********** EVENT HANDLER FUNCTIONS **********/
 
 // These functions handle events (submit, click, etc)
+
+function handleStart() {
+  // we want this function to listen for a click on -play-now button which is a child class of -welcome-screen. 
+  $('.welcome-screen').on('click', '.play-now', function() {
+    store.quizStarted = true;
+    
+    $('main').html(renderQuestionPage())
+  })
+}
+
+
+function handleNextQuestionPage() {
+  //When a user submits an answer, if the answer is correct, take them to the correctAnswerPage, else, take them to the wrongAnswerPage
+  //if answer is correct, call(renderCorrectAnswerPage()), +1 score & +1 question count(number)  
+  //if answer is wrong, call(renderWrongAnswerPage()), +1 question count(number)
+  ('main').on('submit', '.answer-question', event => {
+    event.preventDefault();
+    let answer = $('input[name="album"]:checked').val()
+    let correct = store.questions[store.questionNumber].correctAnswer;
+    if(answer == correct) {
+      store.score += 1;
+      store.questionNumber += 1;
+      $('main').html(renderCorrectAnswerPage())
+
+    }
+    else {
+      store.questionNumber += 1;
+      $('main').html(renderWrongAnswerPage())
+    }
+  }) 
+
+}
+
