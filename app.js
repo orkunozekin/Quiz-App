@@ -61,6 +61,8 @@ const store = {
 };
 
 
+
+
 /**
  * 
  * Technical requirements:
@@ -77,6 +79,9 @@ const store = {
  */
 
 /********** TEMPLATE GENERATION FUNCTIONS **********/
+
+
+
 
 // These functions return HTML templates
 

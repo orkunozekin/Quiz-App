@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Music Knowledge Test</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet"
+    type="text/css" />
+  <link href="app.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap">
+</head>
+
+<body>
+    <!--Welcome Page-->
+  <section class ="container">
+    <h1>Music Knowledge Test</h1>
+    <p>Prove your music knowledge skills!</p>
+    <button>
+      <span>Play now!</span>
+    </button>
+  </section>
+  
+  <!--Question Page-->
+  <section class="container">
+    <p>Question ${question number}</p>
+    <form action="#">
+        <p>What was John Mayer’s debut album?</p>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label>
+        <button class="submit-question">
+            <span>Submit</span>
+        </button>
+    </form>
+</section> 
+
+<!--Correct Answer Page-->
+<section class="container correct-page">
+    <h2>Great Job!</h2>
+    <div class="paragraph">
+      <p>You have ${score} correct answers out of 5.</p>
+      <p>Question ${question number} out of 5</p>
+    </div>
+    <button class="next">
+      <span>Next</span>
+    </button>
+</section>
+
+<!--Wrong Answer Page-->
+<section class="container wrong-page">
+    <h2>Oops! Wrong Answer :(</h2>
+    <div class="paragraph">
+      <p>The right answer is "${correctAnswer}"</p>
+      <p>You have ${score} correct answers out of 5</p>
+      <p>Question ${store.questionNumber} out of 5/p>
+    </div>
+    <button class="next">
+      <span>Next</span>
+    </button>
+</section>
+
+ <!--Finish Page-->
+ <section class="container finish-page">
+    <h2>You finished!</h2>
+    <span style='font-size:70px;'>&#128079;</span>
+    <p>You got ${score} correct answers out of 5.</p>
+    <button class="reset">
+      <span>Restart Quiz</span>
+    </button>
+  </section>
+</body>
+</html>
+
+</body>
+
+</html>
