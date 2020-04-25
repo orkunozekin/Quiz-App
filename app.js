@@ -39,7 +39,7 @@ const store = {
       answers: [
         'Georg Solti',
         'Quincy Jones',
-        'Alison Krauss',
+        'Vladimir Horowitz',
         'Pierre Boulez'
       ],
       correctAnswer: 'Georg Solti'
@@ -133,7 +133,7 @@ function wrongAnswerPage () {
   <section class="container wrong-page">
     <h2>Oops! Wrong Answer :(</h2>
     <div class="paragraph">
-      <p>The correct answer is "${store.questions[store.questionNumber-1].correctAnswer}"</p>
+      <p>The correct answer is "${store.questions[store.questionNumber].correctAnswer}"</p>
       <p>You have ${store.score} correct answers out of 5</p>
       <p>Question ${store.questionNumber} out of 5/p>
     </div>
@@ -182,6 +182,13 @@ function finishPage () {
 
 function render() {
   //don't want any .html .append dom manip methods outside of render()
+  console.log('hello')
+
+  if(store.questionNumber >= store.questions.length) {
+    $('main').html(finishPage())
+    return
+  }
+  
   if(store.quizStarted === false) {
     $('main').html(welcomePage())
     return
@@ -199,12 +206,7 @@ if(store.questionAnsweredCorrectly === true) {
 else {
     $('main').html(wrongAnswerPage())
 }
-if(store.questionNumber < store.question.length) {
-  $('main').html(questionPage())
-}
-else {
-  $('main').html(finishPage())
-}
+
 
 }
 // This function conditionally replaces the contents of the <main> tag based on the state of the store
@@ -250,25 +252,33 @@ function handleNextPage() {
     $('main').on('click', '.next', event => {
         console.log('next-button clicked')
         store.questionAnsweredCorrectly = null;
-        if(store.questionNumber = store.question.length) {
-          render()
-        }
-        
+        // if(store.questionNumber = store.question.length) {
+          
+        // }
+        render()
     })
 }
 
 function handleRestart() {
   $('main').on('click', '.reset', event => {
-    
+    store.quizStarted = true;
+    store.questionNumber = 0;
+    store.score = 0;
+    store.questionAnsweredCorrectly = null;
+
+    render()
   })
 }
 
-
+function start() {
 render()
 handleStart()
 handleNextQuestionPage()
 handleNextPage()
+handleRestart()
+}
 
+$(start)
 
 
 
