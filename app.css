@@ -16,14 +16,23 @@
   border-radius: 10px;
   width: 375px;
   height: 600px;
+  margin: 100px auto 0;
   text-align: center;
   padding: 50px 10px;
   font-family: 'Oswald', sans-serif;
+  background-color: #E5F2FF;
+  font-size: larger;
 }
 
 img {
   height: 150px;
   border-radius: 5px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+
+  
 }
 
 button {
@@ -32,5 +41,143 @@ button {
   border-radius: 10px;
   color: #173B20;
   background-color: darkkhaki;
+  font-weight: bold;
 }
 
+/* Welcome Screen */
+
+.welcome-screen {
+  padding: 30px;
+  
+}
+
+.welcome-screen h1 {
+  margin-top: 60px;
+  font-size: 38px;
+}
+
+.welcome-screen p {
+  font-size: 25px;
+  margin: 70px 0 50px;
+}
+
+.welcome-screen button {
+  margin-top: 50px;
+  font-size: 20px;
+}
+
+/* Question Screen */
+
+form button {
+  display:block;
+  margin: 40px auto 0
+}
+
+.answer-question {
+  height: 250px;
+}
+
+.question-form p {
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+form input {
+  display: inline-block;
+  margin-top: 15px;
+}
+
+/*wrong and correct page */
+
+.wrong-page h2, 
+.correct-page h2,
+.finish-page h2 {
+  font-size: 30px;
+}
+
+.wrong-page > div.paragraph,
+.correct-page > div.paragraph,
+.finish-page > p {
+  margin: 70px auto 50px;
+}
+
+
+@media screen and (min-width:768px) {
+  .container {
+    width: 550px;
+    height:650px;
+  }
+
+  img {
+    height: 230px;
+  }
+
+  .welcome-screen p {
+    margin: 50px 0 50px;
+    font-size: 40px;
+
+  }
+
+  .welcome-screen button {
+    font-size: larger;
+  }
+
+  .question-form p {
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+
+  form input {
+    display: inline-block;
+    margin-top: 15px;
+    
+  }
+
+  form label {
+    font-size: 20px;
+    
+  }
+
+  .wrong-page h2, 
+  .correct-page h2,
+  .finish-page h2 {
+  font-size: 40px;
+}
+
+.wrong-page > div.paragraph,
+.correct-page > div.paragraph,
+.finish-page > p {
+  margin: 70px auto 50px;
+}
+
+.submit-question {
+  margin-top: 30px;
+  
+}
+
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    width: 600px;
+    height: 660px;
+  }
+
+  img {
+    height: 230px;
+  }
+
+  .wrong-page h2, 
+  .correct-page h2,
+  .finish-page h2 {
+  font-size: 60px;
+}
+
+.wrong-page > div.paragraph,
+.correct-page > div.paragraph,
+.finish-page > p {
+  margin: 70px auto 50px;
+  font-size: larger;
+}
+}

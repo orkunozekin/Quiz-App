@@ -132,6 +132,7 @@ function correctAnswerPage () {
   return `
   <section class="container correct-page">
     <h2>Great Job!</h2>
+    <span style='font-size:70px;'>&#128512;</span>
     <div class="paragraph">
       <p>You have ${store.score} correct answers out of 5</p>
       <p>Question ${store.questionNumber} out of 5</p>
@@ -145,7 +146,8 @@ function correctAnswerPage () {
 function wrongAnswerPage () {
   return `
   <section class="container wrong-page">
-    <h2>Oops! Wrong Answer :(</h2>
+    <h2>Oops! Wrong Answer </h2>
+    <span style='font-size:70px;'>&#128528;</span>
     <div class="paragraph">
       <p>The correct answer is "${store.questions[store.questionNumber].correctAnswer}"</p>
       <p>You have ${store.score} correct answers out of 5</p>
@@ -160,7 +162,8 @@ function wrongAnswerPage () {
 function finishPage () {
   return `
   <section class="container finish-page">
-    <h2>You finished!</h2>
+    <h2>You have finished!</h2>
+    <span style='font-size:70px;'>&#128079;</span>
     <p>You have ${store.score} correct answers out of 5.</p>
     <button class="reset">
       <span>Restart Quiz</span>
@@ -253,7 +256,7 @@ function handleNextPage() {
 
 function handleRestart() {
   $('main').on('click', '.reset', event => {
-    store.quizStarted = true;
+    store.quizStarted = false;
     store.questionNumber = 0;
     store.score = 0;
     store.questionAnsweredCorrectly = null;
