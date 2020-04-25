@@ -7,4 +7,30 @@
   *
 */
 
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  border: 3px solid #62F587;
+  border-radius: 10px;
+  width: 375px;
+  height: 600px;
+  text-align: center;
+  padding: 50px 10px;
+  font-family: 'Oswald', sans-serif;
+}
+
+img {
+  height: 150px;
+  border-radius: 5px;
+}
+
+button {
+  padding: 20px 60px;
+  margin: 20px auto 0;
+  border-radius: 10px;
+  color: #173B20;
+  background-color: darkkhaki;
+}
 
