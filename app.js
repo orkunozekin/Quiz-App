@@ -12,8 +12,12 @@ const store = {
         'Battle Studies',
         'The Search for Everything'
       ],
-      correctAnswer: 'Room for Squares'
+
+      correctAnswer: 'Room for Squares',
+      img : 'https://media.pitchfork.com/photos/5d97967490fe870008f50a37/2:1/w_1000/johnmayer_roomforsquares.jpg',
+      alt : 'John Mayer'
     },
+
     {
       question: 'Who is the lead vocalist for Dave Matthews Band?', 
       answers: [
@@ -22,7 +26,10 @@ const store = {
         'Christina Aguilera',
         'Dave Matthews'
       ],
-      correctAnswer: 'Dave Matthews'
+      correctAnswer: 'Dave Matthews',
+      img : 'https://apeconcerts.com/wp-content/uploads/2019/01/DAVE_MATTHEWS_BAND_19_1024-1024x576.jpg',
+      alt : 'Dave Matthews'
+
     },
     {
       question: 'Who wrote “I Will Always Love you?',
@@ -32,17 +39,21 @@ const store = {
         'Aretha Franklin',
         'Carole King'
       ],
-      correctAnswer: 'Dolly Parton'
+      correctAnswer: 'Dolly Parton',
+      img : 'https://www.irishtimes.com/polopoly_fs/1.3105857.1496418206!/image/image.jpg_gen/derivatives/ratio_1x1_w1200/image.jpg',
+      alt : 'Whitney Houston'
     },
     {
       question: 'Which male artist has the most amount of Grammys?',
       answers: [
         'Georg Solti',
         'Quincy Jones',
-        'Vladimir Horowitz',
+        'Alison Krauss',
         'Pierre Boulez'
       ],
-      correctAnswer: 'Georg Solti'
+      correctAnswer: 'Georg Solti',
+      img : 'https://www.grammy.com/sites/all/modules/custom/tra_share/images/banner.default.jpg',
+      alt : 'Grammys'
     },
     {
       question: 'What band was Beyonce in before she went solo?',
@@ -52,7 +63,9 @@ const store = {
         'Destiny’s Child',
         'Spice Girls'
       ],
-      correctAnswer: 'Destiny’s Child'
+      correctAnswer: 'Destiny’s Child',
+      img : 'https://imagesmtv-a.akamaihd.net/uri/mgid:ao:image:mtv.com:689526?quality=0.85&width=1029&height=581&crop=true',
+      alt : 'Beyonce'
     
     }
   ],
@@ -96,6 +109,7 @@ function questionPage() {
   let value = store.questions[store.questionNumber].answers
   return `
   <section class="container question-form">
+<img src="${store.questions[store.questionNumber].img}" alt="${store.questions[store.questionNumber].alt}"
 <p>Question ${store.questionNumber + 1} out of ${store.questions.length}</p>
 <form class="answer-question" action="#">
     <p>${store.questions[store.questionNumber].question}</p>
@@ -160,29 +174,10 @@ function finishPage () {
 // These functions return HTML templates
 
 /********** RENDER FUNCTION(S) **********/
-// function renderWelcomePage() {
-//   return welcomePage()
-// }
 
-// function renderQuestionPage() {
-//   return questionPage()
-// }
-
-// function renderCorrectAnswerPage() {
-//   return correctAnswerPage() 
-// }
-
-// function renderWrongAnswerPage() {
-//   return wrongAnswerPage()
-// }
-
-// function renderFinishPage() {
-//   return finishPage()
-//}
 
 function render() {
   //don't want any .html .append dom manip methods outside of render()
-  console.log('hello')
 
   if(store.questionNumber >= store.questions.length) {
     $('main').html(finishPage())
@@ -252,9 +247,6 @@ function handleNextPage() {
     $('main').on('click', '.next', event => {
         console.log('next-button clicked')
         store.questionAnsweredCorrectly = null;
-        // if(store.questionNumber = store.question.length) {
-          
-        // }
         render()
     })
 }
@@ -279,7 +271,6 @@ handleRestart()
 }
 
 $(start)
-
 
 
      
