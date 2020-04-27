@@ -109,7 +109,7 @@ function questionPage() {
   let value = store.questions[store.questionNumber].answers
   return `
   <section class="container question-form">
-<img src="${store.questions[store.questionNumber].img}" alt="${store.questions[store.questionNumber].alt}"
+<img src="${store.questions[store.questionNumber].img}" alt="${store.questions[store.questionNumber].alt}">
 <p>Question ${store.questionNumber + 1} out of ${store.questions.length}</p>
 <form class="answer-question" action="#">
     <p>${store.questions[store.questionNumber].question}</p>

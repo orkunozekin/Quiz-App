@@ -16,7 +16,8 @@
   border-radius: 10px;
   width: 375px;
   height: 600px;
-  margin: 100px auto 0;
+  margin-top: 50px;
+  margin-bottom: 0px;
   text-align: center;
   padding: 50px 10px;
   font-family: 'Oswald', sans-serif;
@@ -42,6 +43,10 @@ button {
   color: #173B20;
   background-color: darkkhaki;
   font-weight: bold;
+}
+
+.submit-question {
+  margin-top: 9px;
 }
 
 /* Welcome Screen */
@@ -162,6 +167,8 @@ form input {
   .container {
     width: 600px;
     height: 660px;
+    margin-left: 200px
+    
   }
 
   img {
