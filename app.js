@@ -149,7 +149,7 @@ function wrongAnswerPage () {
     <h2>Oops! Wrong Answer </h2>
     <span style='font-size:70px;'>&#128528;</span>
     <div class="paragraph">
-      <p>The correct answer is "${store.questions[store.questionNumber].correctAnswer}"</p>
+      <p>The correct answer is "${store.questions[store.questionNumber -1].correctAnswer}"</p>
       <p>You have ${store.score} correct answers out of 5</p>
       <p>Question ${store.questionNumber} out of 5</p>
     </div>
@@ -229,7 +229,7 @@ function handleNextQuestionPage() {
   $('main').on('submit', '.answer-question', event => {
     event.preventDefault();
     let answer = $('input[name="album"]:checked').val()
-    console.log(answer)
+    //console.log(answer)
     let correct = store.questions[store.questionNumber].correctAnswer; 
     if(answer === correct) {
       store.score += 1;
@@ -248,7 +248,7 @@ function handleNextQuestionPage() {
 function handleNextPage() {
     //when we click next, we want to render the page for next question.
     $('main').on('click', '.next', event => {
-        console.log('next-button clicked')
+        //console.log('next-button clicked')
         store.questionAnsweredCorrectly = null;
         render()
     })
