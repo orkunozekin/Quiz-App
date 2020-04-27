@@ -151,7 +151,7 @@ function wrongAnswerPage () {
     <div class="paragraph">
       <p>The correct answer is "${store.questions[store.questionNumber].correctAnswer}"</p>
       <p>You have ${store.score} correct answers out of 5</p>
-      <p>Question ${store.questionNumber} out of 5/p>
+      <p>Question ${store.questionNumber} out of 5</p>
     </div>
     <button class="next">
       <span>Next</span>
