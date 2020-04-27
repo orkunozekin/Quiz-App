@@ -166,9 +166,8 @@ form input {
 @media screen and (min-width: 1024px) {
   .container {
     width: 600px;
-    height: 660px;
-    margin-left: 200px
-    
+    height: 656px;
+    margin: 0 auto;
   }
 
   img {
