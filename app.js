@@ -96,8 +96,8 @@ const store = {
 function welcomePage() {
   return`
   <section class ="container welcome-screen">
-  <h1>Music Knowledge Test</h1>
-  <p>Prove your music knowledge skills!</p>
+  <h1>Pop Culture Knowledge Test</h1>
+  <p>Demonstrate your pop culture knowledge!</p>
   <button class="play-now">
     <span>Play now!</span>
   </button>
