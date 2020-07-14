@@ -1,34 +1,33 @@
-/* Your styles should be mobile-first and responsive */
 
-/** 
-  * If you are unclear on how to utilize a mobile-first, responsive technique to write your CSS, here is an example: 
-  *
-  * https://github.com/andreacardybailey/responsive_example/blob/master/styles/responsive-base.css 
-  *
-*/
+html {
+  line-height: normal;
+}
 
-
+body {
+  background-image: url('https://wallpaperaccess.com/full/90813.jpg');
+  background-size: cover;
+  font-size: 20px;
+}
 
 
 .container {
-  border: 3px solid #62F587;
   border-radius: 10px;
   margin: 0 auto;
-  height: fit-content;
+  height: 100%;
   text-align: center;
-  padding: 50px 10px;
+  /* padding: 50px 10px; */
+  padding-top: 50px;
   font-family: 'Oswald', sans-serif;
   background-color: #E5F2FF;
   font-size: larger;
+  position: fixed;
+  width: 100%;
 }
 
 img {
   height: 150px;
+  width: 300px;
   border-radius: 5px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px;
 }
 
 button {
@@ -41,13 +40,13 @@ button {
 }
 
 .submit-question {
-  margin-top: 9px;
+  margin-top: 50px;
 }
 
 /* Welcome Screen */
 
 .welcome-screen {
-  padding: 30px;
+  text-align: center;
   line-height: normal;
 }
 
@@ -88,6 +87,10 @@ form input {
   margin-top: 15px;
 }
 
+form p {
+  font-size: 22px;
+}
+
 /*wrong and correct page */
 
 .wrong-page h2, 
@@ -102,11 +105,20 @@ form input {
   margin: 70px auto 50px;
 }
 
+.welcome-screen .world-emoji {
+  font-size: 70px;
+  margin: 30px 0;
+}
+
+form label {
+  font-size: 22px;
+}
+
 
 @media screen and (min-width:768px) {
   .container {
-    width: 550px;
-    height:650px;
+    width: 100%;
+    height: 100%;
   }
 
   img {
@@ -162,27 +174,12 @@ form input {
 
 }
 
+
+
 @media screen and (min-width: 1024px) {
-  .container {
-    width: 600px;
-    height: 570px;
-    margin: 0 auto;
+   .container {
+      font-size: 25px;
   }
 
-  img {
-    height: 230px;
-  }
-
-  .wrong-page h2, 
-  .correct-page h2,
-  .finish-page h2 {
-  font-size: 60px;
-}
-
-.wrong-page > div.paragraph,
-.correct-page > div.paragraph,
-.finish-page > p {
-  margin: 70px auto 50px;
-  font-size: larger;
-}
+  
 }

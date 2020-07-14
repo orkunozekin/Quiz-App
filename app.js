@@ -1,72 +1,129 @@
-/**
- * Example store structure
- */
+
 const store = {
-  // 5 or more questions are required
+
   questions: [
     {
-      question: 'What was John Mayer’s debut album?',
+      question: 'What is the capital of Turkey?',
       answers: [
-        'Continuum',
-        'Room for Squares',
-        'Battle Studies',
-        'The Search for Everything'
+        'Istanbul',
+        'Ankara',
+        'Izmir',
+        'Adana'
       ],
 
-      correctAnswer: 'Room for Squares',
-      img : 'https://media.pitchfork.com/photos/5d97967490fe870008f50a37/2:1/w_1000/johnmayer_roomforsquares.jpg',
-      alt : 'John Mayer'
+      correctAnswer: 'Ankara',
+      img: 'https://1.bp.blogspot.com/-jO4jN2yqMjg/XiRnKw9wR5I/AAAAAAAABAk/20dBiObtVhUIBD7xsSF71NJRpn_9YLXRQCLcBGAsYHQ/s1600/Turkey-Facts-Interesting-Facts-About-Turkey-Country-hot-air-ballons-turkey.png',
+      alt: 'Turkey'
     },
 
     {
-      question: 'Who is the lead vocalist for Dave Matthews Band?', 
+      question: 'What is the capital of the Dominican Republic?',
       answers: [
-        'Paul McCartney',
-        'Billy Joel',
-        'Christina Aguilera',
-        'Dave Matthews'
+        'Santiago',
+        'Punta Cana',
+        'Santo Domingo',
+        'Constanza'
       ],
-      correctAnswer: 'Dave Matthews',
-      img : 'https://apeconcerts.com/wp-content/uploads/2019/01/DAVE_MATTHEWS_BAND_19_1024-1024x576.jpg',
-      alt : 'Dave Matthews'
+      correctAnswer: 'Santo Domingo',
+      img: 'https://www.godominicanrepublic.com/wp-content/uploads/2015/12/dsc01769.jpg',
+      alt: 'the Dominican Republic'
 
     },
     {
-      question: 'Who wrote “I Will Always Love you?',
+      question: 'What is the capital of Poland?',
       answers: [
-        'Whitney Houston',
-        'Dolly Parton',
-        'Aretha Franklin',
-        'Carole King'
+        'Warsaw',
+        'Lublin',
+        'Szczecin',
+        'Gdańsk'
       ],
-      correctAnswer: 'Dolly Parton',
-      img : 'https://www.irishtimes.com/polopoly_fs/1.3105857.1496418206!/image/image.jpg_gen/derivatives/ratio_1x1_w1200/image.jpg',
-      alt : 'Whitney Houston'
+      correctAnswer: 'Warsaw',
+      img: 'https://jobs.rbs.com/system/production/assets/176264/original/poland_lg.jpg',
+      alt: 'Poland'
     },
     {
-      question: 'Which male artist has the most amount of Grammys?',
+      question: 'What is the capital of India?',
       answers: [
-        'Georg Solti',
-        'Quincy Jones',
-        'Alison Krauss',
-        'Pierre Boulez'
+        'Mumbai',
+        'Bangalore',
+        'New Delhi',
+        'Hyderabad'
       ],
-      correctAnswer: 'Georg Solti',
-      img : 'https://www.grammy.com/sites/all/modules/custom/tra_share/images/banner.default.jpg',
-      alt : 'Grammys'
+      correctAnswer: 'New Delhi',
+      img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Taj_Mahal_%28Edited%29.jpeg/1200px-Taj_Mahal_%28Edited%29.jpeg',
+      alt: 'India'
     },
     {
-      question: 'What band was Beyonce in before she went solo?',
+      question: 'What is the capital of Brazil?',
       answers: [
-        'TLC',
-        '3LW',
-        'Destiny’s Child',
-        'Spice Girls'
+        'São Paulo',
+        'Rio de Janeiro',
+        'Brasilia',
+        'Fortaleza'
       ],
-      correctAnswer: 'Destiny’s Child',
-      img : 'https://imagesmtv-a.akamaihd.net/uri/mgid:ao:image:mtv.com:689526?quality=0.85&width=1029&height=581&crop=true',
-      alt : 'Beyonce'
-    
+      correctAnswer: 'Brasilia',
+      img: 'https://d36tnp772eyphs.cloudfront.net/blogs/1/2011/05/brazil-1200x720.jpg',
+      alt: 'Brazil'
+    },
+    {
+      question: 'What is the capital of Canada?',
+      answers: [
+        'Toronto',
+        'Montreal',
+        'Ottawa',
+        'Quebec City'
+      ],
+      correctAnswer: 'Ottawa',
+      img: 'https://www.worldtravelguide.net/wp-content/uploads/2017/03/shu-Canada-Toronto_1388944829-1440x823.jpg',
+      alt: 'Canada'
+    },
+    {
+      question: 'What is the capital of the Bahamas?',
+      answers: [
+        'Freeport',
+        'Nassau',
+        'West End',
+        'Alice Town'
+      ],
+      correctAnswer: 'Nassau',
+      img: 'https://www.worldatlas.com/r/w1200-h701-c1200x701/upload/dd/6c/49/bahamas-islands.jpg',
+      alt: 'the Bahamas'
+    },
+    {
+      question: 'What is the capital of Finland?',
+      answers: [
+        'Helsinki',
+        'Jyväskylä',
+        'Oulu',
+        'Ventaa'
+      ],
+      correctAnswer: 'Helsinki',
+      img: 'https://www.worldtravelguide.net/wp-content/uploads/2017/04/Think-Finland-Lapland-185122878-sara_winter-copy.jpg',
+      alt: 'Finland'
+    },
+    {
+      question: 'What is the capital of Haiti?',
+      answers: [
+        'Cap-Haïtien',
+        'Pétionville',
+        'Jacmel',
+        'Port-au-Prince'
+      ],
+      correctAnswer: 'Port-au-Prince',
+      img: 'https://miro.medium.com/max/4000/0*i072wVa5v_ZdmrrL.jpg',
+      alt: 'Haiti'
+    },
+    {
+      question: 'What is the capital of Algeria?',
+      answers: [
+        'Oran',
+        'Algiers',
+        'Annaba',
+        'Setif'
+      ],
+      correctAnswer: 'Algiers',
+      img: 'https://www.usip.org/sites/default/files/styles/image_with_caption/public/2019-05/20190529-pexels-abdelfatah_cezayirli-ac.jpg?itok=h4ce2-Jh',
+      alt: 'Algeria'
     }
   ],
   quizStarted: false,
@@ -76,28 +133,15 @@ const store = {
 };
 
 
-/**
- * 
- * Technical requirements:
- * 
- * Your app should include a render() function, that regenerates the view each time the store is updated. 
- * See your course material, consult your instructor, and reference the slides for more details.
- *
- * NO additional HTML elements should be added to the index.html file.
- *
- * You may add attributes (classes, ids, etc) to the existing HTML elements, or link stylesheets or additional scripts if necessary
- *
- * SEE BELOW FOR THE CATEGORIES OF THE TYPES OF FUNCTIONS YOU WILL BE CREATING 👇
- * 
- */
 
 /********** TEMPLATE GENERATION FUNCTIONS **********/
 
 function welcomePage() {
-  return`
+  return `
   <section class ="container welcome-screen">
-  <h1>Pop Culture Knowledge Test</h1>
-  <p>Demonstrate your pop culture knowledge!</p>
+  <h1>Welcome to World's Capitals</h1>
+  <p class="world-emoji">&#127757;</p>
+  <p>Demonstrate how familiar you are with the world!</p>
   <button class="play-now">
     <span>Play now!</span>
   </button>
@@ -113,13 +157,13 @@ function questionPage() {
 <p>Question ${store.questionNumber + 1} out of ${store.questions.length}</p>
 <form class="answer-question" action="#">
     <p>${store.questions[store.questionNumber].question}</p>
-    <input type="radio" id="a1" name="album" value="${value[0]}">
+    <input type="radio" id="a1" name="city" value="${value[0]}">
     <label for="a1">${value[0]}</label><br>
-    <input type="radio" id="a2" name="album" value="${value[1]}">
+    <input type="radio" id="a2" name="city" value="${value[1]}">
     <label for="a2">${value[1]}</label><br>
-    <input type="radio" id="a3" name="album" value="${value[2]}">
+    <input type="radio" id="a3" name="city" value="${value[2]}">
     <label for="a3">${value[2]}</label><br>
-    <input type="radio" id="a4" name="album" value="${value[3]}">
+    <input type="radio" id="a4" name="city" value="${value[3]}">
     <label for="a4">${value[3]}</label>
     <button class="submit-question">
         <span>Submit</span>
@@ -128,14 +172,14 @@ function questionPage() {
 </section> `
 }
 
-function correctAnswerPage () {
+function correctAnswerPage() {
   return `
   <section class="container correct-page">
     <h2>Great Job!</h2>
     <span style='font-size:70px;'>&#128512;</span>
     <div class="paragraph">
-      <p>You have ${store.score} correct answers out of 5</p>
-      <p>Question ${store.questionNumber} out of 5</p>
+      <p>You have ${store.score} correct answers out of 10</p>
+      <p>Question ${store.questionNumber} out of 10</p>
     </div>
     <button class="next">
       <span>Next</span>
@@ -143,15 +187,15 @@ function correctAnswerPage () {
 </section>`
 }
 
-function wrongAnswerPage () {
+function wrongAnswerPage() {
   return `
   <section class="container wrong-page">
     <h2>Oops! Wrong Answer </h2>
     <span style='font-size:70px;'>&#128528;</span>
     <div class="paragraph">
-      <p>The correct answer is "${store.questions[store.questionNumber -1].correctAnswer}"</p>
-      <p>You have ${store.score} correct answers out of 5</p>
-      <p>Question ${store.questionNumber} out of 5</p>
+      <p>The correct answer is "${store.questions[store.questionNumber - 1].correctAnswer}"</p>
+      <p>You have ${store.score} correct answers out of 10</p>
+      <p>Question ${store.questionNumber} out of 10</p>
     </div>
     <button class="next">
       <span>Next</span>
@@ -159,12 +203,12 @@ function wrongAnswerPage () {
 </section>`
 }
 
-function finishPage () {
+function finishPage() {
   return `
   <section class="container finish-page">
     <h2>You have finished!</h2>
     <span style='font-size:70px;'>&#128079;</span>
-    <p>You have ${store.score} correct answers out of 5.</p>
+    <p>You have ${store.score} correct answers out of 10 questions</p>
     <button class="reset">
       <span>Restart Quiz</span>
     </button>
@@ -180,30 +224,30 @@ function finishPage () {
 
 
 function render() {
-  //don't want any .html .append dom manip methods outside of render()
 
-  if(store.questionNumber >= store.questions.length) {
+
+  if (store.questionNumber >= store.questions.length) {
     $('main').html(finishPage())
     return
   }
-  
-  if(store.quizStarted === false) {
+
+  if (store.quizStarted === false) {
     $('main').html(welcomePage())
     return
   }
 
-  if(store.questionAnsweredCorrectly === null) {
-      $('main').html(questionPage())
-      return
+  if (store.questionAnsweredCorrectly === null) {
+    $('main').html(questionPage())
+    return
   }
 
-if(store.questionAnsweredCorrectly === true) {
-  $('main').html(correctAnswerPage())
-}
+  if (store.questionAnsweredCorrectly === true) {
+    $('main').html(correctAnswerPage())
+  }
 
-else {
+  else {
     $('main').html(wrongAnswerPage())
-}
+  }
 
 
 }
@@ -215,7 +259,7 @@ else {
 
 function handleStart() {
   // we want this function to listen for a click on -play-now button which is a child class of -welcome-screen. 
-  $('main').on('click', '.play-now', function() {
+  $('main').on('click', '.play-now', function () {
     store.quizStarted = true;
     render()
   })
@@ -228,30 +272,30 @@ function handleNextQuestionPage() {
   // if answer is wrong, call(renderWrongAnswerPage()), +1 question count(number)
   $('main').on('submit', '.answer-question', event => {
     event.preventDefault();
-    let answer = $('input[name="album"]:checked').val()
+    let answer = $('input[name="city"]:checked').val()
     //console.log(answer)
-    let correct = store.questions[store.questionNumber].correctAnswer; 
-    if(answer === correct) {
+    let correct = store.questions[store.questionNumber].correctAnswer;
+    if (answer === correct) {
       store.score += 1;
       store.questionNumber += 1;
       store.questionAnsweredCorrectly = true;
     }
-    else { 
+    else {
       store.questionNumber += 1;
       store.questionAnsweredCorrectly = false;
     }
     render()
-  }) 
+  })
 
 }
 
 function handleNextPage() {
-    //when we click next, we want to render the page for next question.
-    $('main').on('click', '.next', event => {
-        //console.log('next-button clicked')
-        store.questionAnsweredCorrectly = null;
-        render()
-    })
+  //when we click next, we want to render the page for next question.
+  $('main').on('click', '.next', event => {
+    //console.log('next-button clicked')
+    store.questionAnsweredCorrectly = null;
+    render()
+  })
 }
 
 function handleRestart() {
@@ -266,17 +310,16 @@ function handleRestart() {
 }
 
 function start() {
-render()
-handleStart()
-handleNextQuestionPage()
-handleNextPage()
-handleRestart()
+  render()
+  handleStart()
+  handleNextQuestionPage()
+  handleNextPage()
+  handleRestart()
 }
 
 $(start)
 
 
-     
-      
-    
-      
+
+
+
