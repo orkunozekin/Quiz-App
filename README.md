@@ -1,9 +1,3 @@
-Creaters of this app: 
-
-Charita Nichols
-Orkun Ozekin
-
-
 Users can:
 
 1-Start quiz
